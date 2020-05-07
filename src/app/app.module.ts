@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FlightsComponent } from './flights/flights.component';
+import { FlighthomepageComponent } from './flighthomepage/flighthomepage.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FlightsComponent } from './flights/flights.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    FlightsComponent
+    FlightsComponent,
+    FlighthomepageComponent
     
     
 

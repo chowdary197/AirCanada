@@ -29,13 +29,151 @@
             </form>
           </nav>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" routerLink="/login" href="#" role="button on click" aria-haspopup="true"
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" routerLink="/" (click)="onLogin()" role="button on click"   aria-haspopup="true"
+          aria-expanded="false">Login</a>
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" routerLink="/" (click)="onRegister()" role="button on click" aria-haspopup="true"
           aria-expanded="false">Signin</a>
-         
-          
-          
-          
         </li>
       </ul>
     </div>
-  </nav>
+</nav>
+<div *ngIf="showFlightSearch">
+     <main>
+      <section id="home" class="d-flex align-items-center position-relative vh-100 cover hero"
+        style="height: 77vh!important;background: linear-gradient(279.04deg, #1dc0fd 0.42%, #1d77ff 99.65%);">
+        <div class="container-fluid container-fluid-max">
+          <div class="row" style="margin-left: 18%;margin-top: 2%;">
+            <div class="col-9 " style="text-align: center;">
+              <h1 class="text-white">Search flights</h1>
+              <div class="tabs1 mt-3">
+  
+                <div class="tab">
+                  <input type="radio" id="tab-1" name="tab-group-1" checked>
+                  <label _ngcontent-umb-c19="" for="tab-1"
+                    style="color: white;font-weight: bold;width: 112px;text-align: center;background: transparent;border: 0;"></label>
+                  <br>
+                  <div class="content">
+                    <div class="row" style="margin-left: 4%;padding-top: 30px;">
+                      <div class="col-12 col-sm-6 col-lg-3">
+                        <div>
+                          <select name="from" id="batch1" style="height: 35px;" class="form-control dropdown-toggle">
+                            <option value="" disabled selected hidden style="color: gray;">Select trip type</option>
+                            <option value='Roundtrip'>Round-trip</option>
+                            <option value='Oneway'>One-way</option>
+                            <option value='Twoway'>Two-way</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-6 col-lg-3">
+                        <div>
+                          <div class="form-group">
+                            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                              placeholder="No.of Passenger">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row" style="margin-left: 4%;">
+                      <div class="col-12 col-sm-6 col-lg-3">
+                        <div>
+                          <select name="from" id="batch1" style="height: 35px;" class="form-control dropdown-toggle"
+                            aria-placeholder="Select Source (From)">
+                            <option value="" disabled selected hidden style="color: gray;">Select Source (From)</option>
+                            <option value='Canada'>Canada</option>
+                            <option value='USA'>USA</option>
+                            <option value='Singapore'>Singapore</option>
+                            <option value='Hyderabad'>Hyderabad (IN)</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-6 col-lg-3">
+                        <div>
+                          <select name="toaddr" id="batch1" style="height: 35px;" class="form-control dropdown-toggle">
+                            <option value="" disabled selected hidden style="color: gray;">Select Destination (To)
+                            </option>
+                            <option value='USA'>USA</option>
+                            <option value='Canada'>Canada</option>
+                            <option value='Hyderabad'>Hyderabad (IN)</option>
+                            <option value='Singapore'>Singapore</option>
+                          </select>
+                        </div>
+                      </div>
+  
+                      <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="form-group">
+                          <input class="form-control" type="date" name="trvlDate" title="Travel Date">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                      <div>
+                        <a style="margin-left: -29px; background:#1d77ff; color:white;"
+                          routerLink="/flight" class="primary-btn text-uppercase">Search
+                          flights</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       </section>
+    </main>
+  </div>
+<div *ngIf="showLogin" style="width: 500px;margin-left: 400px;">
+  <h2>Login</h2>
+  <form class="loginform" style="width: 300px;">
+      <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" formControlName="username" class="form-control" required/>     
+      </div>
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" formControlName="password" class="form-control" required/>     
+      </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>&nbsp;&nbsp;
+          <button type="submit" (click)=back() class="btn btn-primary">Back</button>
+          <!-- <a routerLink="/register" class="btn btn-link">Register</a> -->
+      </div> 
+  </form>
+</div>
+
+<div *ngIf="showRegister">
+<h2>Register</h2>
+<form group class="loginform">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" formControlName="firstName" class="form-control" required/>
+       
+    </div>
+    
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control" required/>
+        
+    </div>
+    
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" required/>
+       
+    </div>
+    
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" required/>
+       
+    </div>
+    
+    <div class="form-group">
+        <button type ="submit" class="btn btn-primary">Register</button>
+        <button type="submit" (click)="backRegister()">Back</button>
+      
+    </div>
+</form>
+
+</div>
+
