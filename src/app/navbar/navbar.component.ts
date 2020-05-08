@@ -25,7 +25,9 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/register']);
   }
 
-  
+  homepage(){
+    this.router.navigate(['/flight']);
+  }
 
 
 }
