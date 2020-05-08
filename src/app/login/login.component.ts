@@ -15,28 +15,39 @@ export class LoginComponent implements OnInit {
     }
 
     ngOnInit() {
-       
-        
-
-        // get return url from route parameters or default to '/'
-     
     }
 
-    // convenience getter for easy access to form fields
-    
-
-    onSubmit() {
-alert("login succesful");
-
-      //  this.submitted = true;
-       
-
-        // stop here if form is invalid
-       // if (this.loginForm.invalid) {
-         //   return;
-        //}
-
-       // this.loading = true;
-        
+    onLogin(loginCredentials, data) {
+      if (loginCredentials.username == "kiran" && loginCredentials.password == "kiran" && data == "manager") {
+        var response = {
+          username: 'kiran',
+          role: 'manager',
+          userid: 'kiran@gmail.com'
+        }
+      } else if (loginCredentials.username == "praveen" && loginCredentials.password == "praveen" && data == "user") {
+        alert("Logged in successfully")
+      } else {
+        alert("Please check login credentials");
+      }
+    }
+  
+    onRegistration(data) {
+  
+      if (data.password == data.ConfirmPassword) {
+        console.log(data);
+  
+        var dataObj = {
+          username: data.username,
+          password: data.password,
+          userid: data.userid,
+          EmailId: data.EmailId,
+          PhoneNo: data.PhoneNo,
+          role: "User",
+          AYN: "Y",
+          cdate: new Date().getTime()
+        }
+      } else {
+        alert("Password and Confirm Password doesn't match")
+      }
     }
 }

@@ -7,9 +7,6 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  showFlightSearch: boolean = true;
-  showLogin: boolean = false;
-  showRegister: boolean = false;
 
   fromaddr;
   toaddr;
@@ -21,25 +18,13 @@ export class NavbarComponent implements OnInit {
   }
 
   onLogin() {
-    this.showFlightSearch = false;
-    this.showLogin = true;
-    // this.router.navigate(['login']);
+    this.router.navigate(['/login']);
   }
 
   onRegister() {
-    this.showFlightSearch = false;
-    this.showRegister = true;
   }
 
-  back() {
-    this.showLogin = false;
-    this.showFlightSearch = true;
-  }
-
-  backRegister() {
-    this.showRegister = false;
-    this.showFlightSearch = true;
-  }
+  
 
 
 }
