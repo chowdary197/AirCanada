@@ -10,7 +10,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FlightsComponent } from './flights/flights.component';
-import { FlighthomepageComponent } from './flighthomepage/flighthomepage.component';
 import { FlightService } from './services/flightsadd.service';
 import { FormsModule } from '@angular/forms';
 import { FlightsdetailsComponent } from './flightsdetails/flightsdetails.component';
@@ -23,7 +22,6 @@ import { FlightsdetailsComponent } from './flightsdetails/flightsdetails.compone
     LoginComponent,
     RegisterComponent,
     FlightsComponent,
-    FlighthomepageComponent,
     FlightsdetailsComponent
     
     

@@ -78,19 +78,28 @@ export class FlightslistComponent implements OnInit {
     editedFlight.docid = this.clickEditObj._id;
     this.closeeditdiv();
   }
-
+  closeDelete(){
+    this.showflightslist = true;
+    this.showaddmodel = false;
+    this.showdeletediv = false;
+    this.showeditdiv = false;
+  }
   dataToDelete
   deletename;
 
   deleteData(dd) {
     this.dataToDelete = dd;
     this.deletename = dd.Flightname
-
+    this.showflightslist = false;
+    this.showaddmodel = false;
+    this.showdeletediv = true;
+    this.showeditdiv = false;
   }
 
   onDelete() {
     this._flightsService.deleteflight(this.dataToDelete);
     this.loadDataSer();
+    this.closeDelete();
   }
  
 }
