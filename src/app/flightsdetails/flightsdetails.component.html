@@ -1,1 +1,52 @@
-<p>flightsdetails works!</p>
+
+<div class="row" style="font-size: 20px;
+font-weight: bold;">
+    Flight Indetails - {{selectedFlight.Flightname}}
+  </div>
+  <div class="row">
+      <table class="table" style="font-size: 15px;width:100%;">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Features</th>
+              <th scope="col">Standard</th>
+              <th scope="col">Latitude</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                  <img src="assets/img/flightinside.png"  height=350 width="100%" alt="" >
+                  <div style="font-size: 14px;">Sit back and relax in our comfortable, contemporary Economy Class cabin. Choose from hundreds of hours of top-rated entertainment on your personal touch-screen TV, and enjoy a hot meal, wine, spirits and non-alcoholic drinks at no charge.</div>
+              </td>
+              <td>
+                 <div style="font-weight: bold;"> Highlights:</div>
+  
+                 <p> 1st checked bag free</p>
+                 <p> Changes for a fee</p>
+                 <p> 50% Aeroplan/Altitude Qualifying Miles</p><br>
+                 <div >
+                  <p style="color:#D8292F;font-weight: bold;">{{selectedFlight.Price|number}}</p>
+                  <button type="submit" class="btn btn-primary" style="color: #FFFFFF;background-color: #D8292F;
+                  border: 1px solid #D8292F;font-size: 15px;height: 40px;margin-top: -8%;">                           
+                    Select
+                 </button>
+              </div>
+              </td>
+              <td>
+                  <div style="font-weight: bold;"> Highlights:</div>
+                  <p> 2 checked bags free</p>
+                  <p> Free changes and cancellations</p>
+                  <p> 125% Aeroplan/Altitude Qualifying Miles</p>
+                  <p>Free Preferred and standard seat selection</p>
+                  <p>Free same-day standby</p>
+                  <p>Priority check-in, baggage and boarding</p>
+              
+              </td>
+              
+            </tr>
+           
+            
+          </tbody>
+        </table>
+  
+  </div>

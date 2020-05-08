@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlightsdetailsComponent implements OnInit {
 
-  constructor() { }
+  selectedFlight:any;
+  constructor() {
+
+    this.selectedFlight = JSON.parse(localStorage.getItem("flightSelect"));
+  }
 
   ngOnInit(): void {
   }
