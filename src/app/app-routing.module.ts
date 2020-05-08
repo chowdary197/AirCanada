@@ -11,6 +11,7 @@ const routes: Routes = [
   {path:'register', component:RegisterComponent},
   {path:'flight',component:FlightsComponent},
   {path:'flightdetails',component:FlightsdetailsComponent},
+  {path:'admin',loadChildren:()=> import('./admin/admin.module').then(m => m.AdminModule)},
   { path: "", redirectTo: "flight", pathMatch: "full" },
 ];
 

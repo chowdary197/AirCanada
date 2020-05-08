@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
    loginForm: FormGroup;
 
-    constructor( ) {
+    constructor(private router:Router ) {
     }
 
     ngOnInit() {
@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
           role: 'manager',
           userid: 'kiran@gmail.com'
         }
+        localStorage.setItem('loginObj',JSON.stringify(response));
+        this.router.navigate(['/admin']);
       } else if (loginCredentials.username == "praveen" && loginCredentials.password == "praveen" && data == "user") {
         alert("Logged in successfully")
       } else {

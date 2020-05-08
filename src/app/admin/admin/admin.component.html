@@ -1,1 +1,35 @@
-<p>admin works!</p>
+
+    <body class="sb-nav-fixed">
+        <nav style="    height: 75px;
+        margin-top: -75px;" class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand ml-2" style="padding: 0%;" href="index.html">
+                <img src="assets/images/logo/Flight-PNG.png"  height=50 alt="" >
+            </a>
+            
+            <p class="h2 text-light ml-1">Flights Booking System {{ClickedMenu}}</p>
+            <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"></div>
+            <!-- Navbar-->
+            <ul class="navbar-nav ml-auto ml-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle"></i>{{loginuser}}</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">Settings</a><a class="dropdown-item" href="#">Activity Log</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" (click)='onLogout()'>Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            
+            <div id="layoutSidenav_content">
+               <main style="background-color: #f6f6f6;height: 567px;">
+                   <router-outlet></router-outlet>
+                   
+               </main>
+            </div>
+        </div>
+        
+        
+    </body>
+
