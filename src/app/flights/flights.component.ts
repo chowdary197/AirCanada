@@ -42,5 +42,9 @@ export class FlightsComponent implements OnInit {
 
   }
 
+  flightsindetails(flgt) {
+    localStorage.setItem('flightSelect', JSON.stringify(flgt));
+    this.router.navigate(['flightdetails']);
 
+  }
 }

@@ -13,6 +13,7 @@ import { FlightsComponent } from './flights/flights.component';
 import { FlighthomepageComponent } from './flighthomepage/flighthomepage.component';
 import { FlightService } from './services/flightsadd.service';
 import { FormsModule } from '@angular/forms';
+import { FlightsdetailsComponent } from './flightsdetails/flightsdetails.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     FlightsComponent,
-    FlighthomepageComponent
+    FlighthomepageComponent,
+    FlightsdetailsComponent
     
     
 

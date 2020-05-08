@@ -102,7 +102,7 @@
      </tr>
    </thead>
    <tbody>
-     <tr *ngFor="let flight of flightslst" style="cursor: pointer;">
+     <tr *ngFor="let flight of flightslst" style="cursor: pointer;" (click)="flightsindetails(flight)">
        
        <td>{{flight.Flightname}}</td>
        <td>{{flight.source}}</td>
