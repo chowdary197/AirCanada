@@ -22,6 +22,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onRegister() {
+    this.router.navigate(['/register']);
   }
 
   
