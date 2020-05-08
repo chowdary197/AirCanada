@@ -15,7 +15,10 @@ export class FlightslistComponent implements OnInit {
   public username = this.loginObject.username;
   public userid = this.loginObject.userid;
   clickEditObj;
+  showflightslist: boolean = true;
   showaddmodel: boolean = false;
+  showdeletediv: boolean = false;
+  showeditdiv: boolean = false;
   constructor(private router: Router, private _flightsService: FlightService) {
     this.loadDataSer();
   }
@@ -24,7 +27,11 @@ export class FlightslistComponent implements OnInit {
 
   }
   addflight() {
+    
+    this.showflightslist = false;
     this.showaddmodel = true;
+    this.showdeletediv = false;
+    this.showeditdiv = false;
   }
   loadDataSer() {
     this.flights = this._flightsService.getFlights();
@@ -37,7 +44,10 @@ export class FlightslistComponent implements OnInit {
     console.log(cD);
     this._flightsService.save(cD);
     this.loadDataSer();
-
+    this.showflightslist = true;
+    this.showaddmodel = false;
+    this.showdeletediv = false;
+    this.showeditdiv = false;
   }
   dataToEdit = {
     'Flightid': 0,
@@ -46,16 +56,27 @@ export class FlightslistComponent implements OnInit {
     'source': '',
     'destination': '',
     'Price': '',
+    'class1':''
   };
 
   editData(dataItem) {
+    this.showflightslist = false;
+    this.showaddmodel = false;
+    this.showdeletediv = false;
+    this.showeditdiv = true;
     this.dataToEdit = dataItem;
     this.clickEditObj = dataItem;
+  }
+  closeeditdiv(){
+    this.showflightslist = true;
+    this.showaddmodel = false;
+    this.showdeletediv = false;
+    this.showeditdiv = false;
   }
 
   onEdit(editedFlight) {
     editedFlight.docid = this.clickEditObj._id;
-
+    this.closeeditdiv();
   }
 
   dataToDelete
