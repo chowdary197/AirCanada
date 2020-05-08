@@ -1,1 +1,29 @@
-<p>flightslist works!</p>
+<div class="row" style="margin-top:1%;margin-left: 3%;" >
+    <table class="table" style="font-size: 15px;width:95%;">
+      <thead>
+        <tr> 
+          <th scope="col">Flight Name</th>
+          <th scope="col">From</th>
+          <th scope="col">To</th>
+          <th scope="col">Price</th>
+          <th scope="col">Economy</th>
+          <th scope="col">Premimum Economy</th>
+          <th scope="col">Business</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flightslst" style="cursor: pointer;">
+          
+          <td>{{flight.Flightname}}</td>
+          <td>{{flight.source}}</td>
+          <td>{{flight.destination}}</td>
+          <td>{{flight.Price| number}}</td>
+          <td>{{flight.Price|number}}</td>
+          <td>{{flight.Price*3|number}}</td>
+          <td>{{flight.Price*7|number}}</td>
+        </tr>
+       
+        
+      </tbody>
+    </table>
+   </div>
