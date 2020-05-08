@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FlightsComponent } from './flights/flights.component';
 import { FlighthomepageComponent } from './flighthomepage/flighthomepage.component';
+import { FlightService } from './services/flightsadd.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,11 +30,11 @@ import { FlighthomepageComponent } from './flighthomepage/flighthomepage.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-   
+    FormsModule,
     AppRoutingModule
     
   ],
-  providers: [],
+  providers: [FlightService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

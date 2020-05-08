@@ -7,32 +7,39 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-showFlightSearch:boolean=true;
-showLogin:boolean=false;
-showRegister:boolean=false;
-  constructor(private router:Router,private ar:ActivatedRoute) { }
+  showFlightSearch: boolean = true;
+  showLogin: boolean = false;
+  showRegister: boolean = false;
+
+  fromaddr;
+  toaddr;
+  trdatetodisplay;
+  DisUn;
+  constructor(private router: Router, private ar: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
-  onLogin(){
-    this.showFlightSearch=false;
-    this.showLogin=true;
-   // this.router.navigate(['login']);
+  onLogin() {
+    this.showFlightSearch = false;
+    this.showLogin = true;
+    // this.router.navigate(['login']);
   }
 
-  onRegister(){
-    this.showFlightSearch=false;
-    this.showRegister=true;
+  onRegister() {
+    this.showFlightSearch = false;
+    this.showRegister = true;
   }
 
-  back(){
-    this.showLogin=false;
-    this.showFlightSearch=true;
+  back() {
+    this.showLogin = false;
+    this.showFlightSearch = true;
   }
-   
-  backRegister(){
-    this.showRegister=false;
-    this.showFlightSearch=true;
+
+  backRegister() {
+    this.showRegister = false;
+    this.showFlightSearch = true;
   }
+
+
 }
