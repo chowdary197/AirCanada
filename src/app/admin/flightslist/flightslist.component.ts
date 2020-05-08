@@ -92,4 +92,5 @@ export class FlightslistComponent implements OnInit {
     this._flightsService.deleteflight(this.dataToDelete);
     this.loadDataSer();
   }
+ 
 }
