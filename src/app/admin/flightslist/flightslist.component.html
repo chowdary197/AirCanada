@@ -1,29 +1,105 @@
-<div class="row" style="margin-top:1%;margin-left: 3%;" >
+<div style="margin-bottom: 53px;
+" class="col-12"> <button (click)="addflight()" class="btn btn-primary" style="float: right;">Add
+        Flight</button>
+</div>
+
+<div *ngIf="showaddmodel" class="col-6 mx-auto">
+
+    <div class="modal-content">
+        <div class="modal-header bg-primary">
+            <h4 class="modal-title" style="color: whitesmoke;">Add Flight</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form #FlightDetails='ngForm'>
+                <div class="form-row">
+
+                    <div class="form-group col-md-6 mb-2">
+                        <!-- <label for="n">Flight Name</label> -->
+                        <input type="text" id="Flightname" name="Flightname" #Flightname="ngModel" autocomplete="off"
+                            required placeholder="Enter Flight Name" class="form-control" ngModel>
+                        <div *ngIf="Flightname.invalid && (Flightname.dirty || Flightname.touched)" class="text-danger">
+                            <div *ngIf="Flightname.errors?.requried"></div>
+                            Flight Name is required
+                        </div>
+                    </div>
+
+
+                    <div class="form-group  col-md-6 mb-2">
+                        <input type="text" id="Fromsource" name="source" #source="ngModel" autocomplete="off" required
+                            placeholder="Enter Source (From)" class="form-control" ngModel>
+                        <div *ngIf="source.invalid && (source.dirty || source.touched)" class="text-danger">
+                            <div *ngIf="source.errors?.requried"></div>
+                            Source (From) is required
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6 mb-2">
+                        <input type="text" id="e" name="destination" #destination="ngModel" autocomplete="off" required
+                            placeholder="Enter Destination (To)" class="form-control" ngModel>
+                        <div *ngIf="destination.invalid && (destination.dirty || destination.touched)"
+                            class="text-danger">
+                            <div *ngIf="destination.errors?.requried"></div>
+                            Destination (To) is required
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6 mb-2">
+
+                        <input type="text" id="min" name="Price" #Price="ngModel" autocomplete="off"
+                            placeholder="Enter Price" class="form-control" ngModel>
+                    </div>
+                    <div class="form-group col-md-6 mb-2">
+                        <select name="class1" id="batch1" class="form-control dropdown-toggle" ngModel>
+                            <option value="" disabled selected hidden style="color: gray;">Select Class</option>
+                            <option value='Economy'>Economy</option>
+                            <option value='Premimum Economy'>Premimum Economy</option>
+                            <option value='Business'>Business</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="text-center mt-1">
+                    <button type="submit" class="btn btn-primary btn-md" data-dismiss='modal'
+                        (click)='onAdd(FlightDetails.value);FlightDetails.reset()'>Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<div class="row" style="margin-top:1%;margin-left: 3%;" *ngIf="!showaddmodel">
     <table class="table" style="font-size: 15px;width:95%;">
-      <thead>
-        <tr> 
-          <th scope="col">Flight Name</th>
-          <th scope="col">From</th>
-          <th scope="col">To</th>
-          <th scope="col">Price</th>
-          <th scope="col">Economy</th>
-          <th scope="col">Premimum Economy</th>
-          <th scope="col">Business</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let flight of flightslst" style="cursor: pointer;">
-          
-          <td>{{flight.Flightname}}</td>
-          <td>{{flight.source}}</td>
-          <td>{{flight.destination}}</td>
-          <td>{{flight.Price| number}}</td>
-          <td>{{flight.Price|number}}</td>
-          <td>{{flight.Price*3|number}}</td>
-          <td>{{flight.Price*7|number}}</td>
-        </tr>
-       
-        
-      </tbody>
+        <thead>
+            <tr>
+                <th scope="col">Flight Name</th>
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+                <th scope="col">Price</th>
+                <th scope="col">Economy</th>
+                <th scope="col">Premimum Economy</th>
+                <th scope="col">Business</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let flight of flights" style="cursor: pointer;">
+
+                <td>{{flight.Flightname}}</td>
+                <td>{{flight.source}}</td>
+                <td>{{flight.destination}}</td>
+                <td>{{flight.Price| number}}</td>
+                <td>{{flight.Price|number}}</td>
+                <td>{{flight.Price*3|number}}</td>
+                <td>{{flight.Price*7|number}}</td>
+                <td><button (click)="editData(flight)" class="btn btn-primary">Edit</button></td>
+                <td><button (click)="deleteData(flight)" class="btn btn-primary">Delete</button></td>
+            </tr>
+
+
+        </tbody>
     </table>
-   </div>
+</div>
